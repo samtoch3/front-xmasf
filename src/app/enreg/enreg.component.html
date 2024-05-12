@@ -1,0 +1,40 @@
+
+<div class="container texte no-syn coul">
+    <div class="flex justify-content-center content" ngIf="messages">
+        <p-messages [(value)]="messages" [escape]="false" [closable]="false"></p-messages>
+    </div>
+    <div class="fr-highlight" ngIf="isUserAlreadySaved">
+        <span class="fr-notice__title font-bold mr-8 content"> Si vous souhaitez plutôt modifier vos préférences, <a class="coul2" routerLink="/rsvp">Cliquez ici</a></span>
+      
+    <br/>
+    <div class="flex justify-content-center">
+        <!-- [formGroup]="form" -->
+        <form>
+            <div class="fr-input-group">
+                <select class="fr-select content" name="civilite" id="civilite" autocomplete="civilite" formControlName="civilite" autofocus="civilite" required="required">
+                    <option value="">Choisir une civilité...</option>
+                    <option value="M.">Monsieur</option>
+                    <option value="Mme">Madame</option>
+                    <option value="Mlle">Mademoiselle</option>
+                </select>
+            </div>
+            <br/>
+            <span class="p-float-label">
+                <input pInputText id="lastname" class="p-inputtext-lg fr-input fr-mb-3 touched" pKeyFilter="alpha" aria-labelledby="lastname" formControlName="lastname" 
+                autocomplete="lastname" autofocus="autofocus" required="required"/>
+                <label for="lastname" class="content">Nom</label>
+            </span>
+            <br/><br/>
+            <span class="p-float-label">
+                <input pInputText id="firstname" class="p-inputtext-lg fr-input fr-mb-3 touched" aria-labelledby="firstname" formControlName="firstname" 
+                autocomplete="lastname" autofocus="autofocus" required="required"/>
+                <label for="firstname" class="content">Prenom</label>
+            </span>
+            <br/><br/>
+            <p-button label="M'enregistrer" class="text-center texte no-syn" icon="pi pi-check" [loading]="loading" (onClick)="load()"></p-button>
+        </form>
+    </div>
+
+</div>
+
+</div>

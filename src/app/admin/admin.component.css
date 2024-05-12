@@ -1,0 +1,14 @@
+
+
+p-panel {
+    margin-left: 80;
+    color: var(--gray-700);
+}
+
+.p-stepper {
+      flex-basis: 50rem;
+} 
+
+p-table {
+    margin: 24rem 25em; 
+}
