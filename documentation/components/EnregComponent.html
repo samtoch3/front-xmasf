@@ -1,0 +1,839 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>xmasf documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">xmasf documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  EnregComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/enreg/enreg.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-enreg</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ButtonModule</code>
+                            <code>MessagesModule</code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./enreg.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./enreg.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#isUserAlreadySaved" >isUserAlreadySaved</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#messages" >messages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, router: Router, messagesService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, helperService: <a href="../injectables/HelperService.html" target="_self">HelperService</a>, usersService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/enreg/enreg.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messagesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>helperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HelperService.html" target="_self" >HelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>load()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/enreg/enreg.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/enreg/enreg.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>search()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/enreg/enreg.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/enreg/enreg.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserAlreadySaved"></a>
+                    <span class="name">
+                        <span ><b>isUserAlreadySaved</b></span>
+                        <a href="#isUserAlreadySaved"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/enreg/enreg.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/enreg/enreg.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messages"></a>
+                    <span class="name">
+                        <span ><b>messages</b></span>
+                        <a href="#messages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Message[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/enreg/enreg.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, FormsModule } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Message } from &#x27;primeng/api&#x27;;
+import { HelperService } from &#x27;../services/helper.service&#x27;;
+import { MessageService } from &#x27;../services/messages.service&#x27;;
+import { User } from &#x27;../model/user&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
+import { take } from &#x27;rxjs&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { MessagesModule } from &#x27;primeng/messages&#x27;;
+
+
+@Component({
+  selector: &#x27;app-enreg&#x27;,
+  standalone: true,
+  imports: [ButtonModule, MessagesModule, FormsModule],
+  templateUrl: &#x27;./enreg.component.html&#x27;,
+  styleUrl: &#x27;./enreg.component.css&#x27;
+})
+export class EnregComponent implements OnInit {
+
+  loading!: boolean;
+  isUserAlreadySaved!: boolean;
+  form: FormGroup;
+  messages: Message[] &#x3D; [];
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private messagesService: MessageService,
+    private helperService: HelperService,
+    private usersService: UserService  ) {
+   
+      this.form &#x3D; this.fb.group({
+        civilite: [&quot;&quot;, Validators.required],
+        lastname: [&quot;&quot;, Validators.required],
+        firstname: [&quot;&quot;, Validators.required]
+      });
+
+  }
+  ngOnInit(): void {
+    this.messages &#x3D; this.messagesService.addMessage(&quot;error&quot;, &quot;Les enregistrements en ligne sont terminés.&quot;);
+  }
+
+  load() {
+
+    if (this.helperService.toString(this.form.value.firstname) &#x3D;&#x3D; &quot;&quot; || this.helperService.toString(this.form.value.lastname) &#x3D;&#x3D; &quot;&quot; || this.helperService.toString(this.form.value.civilite) &#x3D;&#x3D; &quot;&quot;) {
+      this.messages &#x3D; this.messagesService.addMessage(&quot;warn&quot;, &quot;Veuillez selectionner votre civilité, puis entrer votre nom et votre prénom !&quot;);
+    } else {
+      this.loading &#x3D; true;
+      setTimeout(() &#x3D;&gt; {
+          this.search();
+          this.loading &#x3D; false
+      }, 1000);
+    }
+
+  }
+
+
+  search(): void {
+
+    const fullname &#x3D; this.helperService.construireFullname(this.form.value.firstname, this.form.value.lastname);
+
+    const userToSave: User &#x3D; {
+      nom: fullname,
+      email: &quot;&quot;,
+      souhaits: &quot;&quot;,
+      secrets: &quot;&quot;
+    };
+
+    this.usersService.findUserByName(fullname).pipe(take(1)).subscribe(user &#x3D;&gt; {
+
+      if (user) {
+        this.messages &#x3D; this.messagesService.addMessage(&quot;success&quot;, &quot;Vous avez déjà été enregistré ; Vous pouvez dès à présent retourner à la page d&#x27;accueil.&quot;); 
+        this.isUserAlreadySaved &#x3D; true;
+        //this.dataStoreService.storeUser(user);
+      } else {
+        this.messages &#x3D; this.messagesService.addMessage(&quot;error&quot;, &quot;L&#x27;utilisateur n&#x27;a pas été trouvé. Veuillez procedez à l&#x27;enregistrement !&quot;); // message jamais affiché car on atterit sur la page suivante
+        this.isUserAlreadySaved &#x3D; false;
+        //this.dataStoreService.storeUser(userToSave);
+        this.router.navigate([&#x27;/&#x27;, &#x27;rsvp&#x27;]);
+      }
+    });
+  
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;container texte no-syn coul&quot;&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center content&quot; ngIf&#x3D;&quot;messages&quot;&gt;
+        &lt;p-messages [(value)]&#x3D;&quot;messages&quot; [escape]&#x3D;&quot;false&quot; [closable]&#x3D;&quot;false&quot;&gt;&lt;/p-messages&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;fr-highlight&quot; ngIf&#x3D;&quot;isUserAlreadySaved&quot;&gt;
+        &lt;span class&#x3D;&quot;fr-notice__title font-bold mr-8 content&quot;&gt; Si vous souhaitez plutôt modifier vos préférences, &lt;a class&#x3D;&quot;coul2&quot; routerLink&#x3D;&quot;/rsvp&quot;&gt;Cliquez ici&lt;/a&gt;&lt;/span&gt;
+      
+    &lt;br/&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center&quot;&gt;
+        &lt;!-- [formGroup]&#x3D;&quot;form&quot; --&gt;
+        &lt;form&gt;
+            &lt;div class&#x3D;&quot;fr-input-group&quot;&gt;
+                &lt;select class&#x3D;&quot;fr-select content&quot; name&#x3D;&quot;civilite&quot; id&#x3D;&quot;civilite&quot; autocomplete&#x3D;&quot;civilite&quot; formControlName&#x3D;&quot;civilite&quot; autofocus&#x3D;&quot;civilite&quot; required&#x3D;&quot;required&quot;&gt;
+                    &lt;option value&#x3D;&quot;&quot;&gt;Choisir une civilité...&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;M.&quot;&gt;Monsieur&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;Mme&quot;&gt;Madame&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;Mlle&quot;&gt;Mademoiselle&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;br/&gt;
+            &lt;span class&#x3D;&quot;p-float-label&quot;&gt;
+                &lt;input pInputText id&#x3D;&quot;lastname&quot; class&#x3D;&quot;p-inputtext-lg fr-input fr-mb-3 touched&quot; pKeyFilter&#x3D;&quot;alpha&quot; aria-labelledby&#x3D;&quot;lastname&quot; formControlName&#x3D;&quot;lastname&quot; 
+                autocomplete&#x3D;&quot;lastname&quot; autofocus&#x3D;&quot;autofocus&quot; required&#x3D;&quot;required&quot;/&gt;
+                &lt;label for&#x3D;&quot;lastname&quot; class&#x3D;&quot;content&quot;&gt;Nom&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;br/&gt;&lt;br/&gt;
+            &lt;span class&#x3D;&quot;p-float-label&quot;&gt;
+                &lt;input pInputText id&#x3D;&quot;firstname&quot; class&#x3D;&quot;p-inputtext-lg fr-input fr-mb-3 touched&quot; aria-labelledby&#x3D;&quot;firstname&quot; formControlName&#x3D;&quot;firstname&quot; 
+                autocomplete&#x3D;&quot;lastname&quot; autofocus&#x3D;&quot;autofocus&quot; required&#x3D;&quot;required&quot;/&gt;
+                &lt;label for&#x3D;&quot;firstname&quot; class&#x3D;&quot;content&quot;&gt;Prenom&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;br/&gt;&lt;br/&gt;
+            &lt;p-button label&#x3D;&quot;M&#x27;enregistrer&quot; class&#x3D;&quot;text-center texte no-syn&quot; icon&#x3D;&quot;pi pi-check&quot; [loading]&#x3D;&quot;loading&quot; (onClick)&#x3D;&quot;load()&quot;&gt;&lt;/p-button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container texte no-syn coul">    <div class="flex justify-content-center content" ngIf="messages">        <p-messages [(value)]="messages" [escape]="false" [closable]="false"></p-messages>    </div>    <div class="fr-highlight" ngIf="isUserAlreadySaved">        <span class="fr-notice__title font-bold mr-8 content"> Si vous souhaitez plutôt modifier vos préférences, <a class="coul2" routerLink="/rsvp">Cliquez ici</a></span>          <br/>    <div class="flex justify-content-center">        <!-- [formGroup]="form" -->        <form>            <div class="fr-input-group">                <select class="fr-select content" name="civilite" id="civilite" autocomplete="civilite" formControlName="civilite" autofocus="civilite" required="required">                    <option value="">Choisir une civilité...</option>                    <option value="M.">Monsieur</option>                    <option value="Mme">Madame</option>                    <option value="Mlle">Mademoiselle</option>                </select>            </div>            <br/>            <span class="p-float-label">                <input pInputText id="lastname" class="p-inputtext-lg fr-input fr-mb-3 touched" pKeyFilter="alpha" aria-labelledby="lastname" formControlName="lastname"                 autocomplete="lastname" autofocus="autofocus" required="required"/>                <label for="lastname" class="content">Nom</label>            </span>            <br/><br/>            <span class="p-float-label">                <input pInputText id="firstname" class="p-inputtext-lg fr-input fr-mb-3 touched" aria-labelledby="firstname" formControlName="firstname"                 autocomplete="lastname" autofocus="autofocus" required="required"/>                <label for="firstname" class="content">Prenom</label>            </span>            <br/><br/>            <p-button label="M\'enregistrer" class="text-center texte no-syn" icon="pi pi-check" [loading]="loading" (onClick)="load()"></p-button>        </form>    </div></div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EnregComponent', 'selector': 'app-enreg'},{'name': 'HomeComponent', 'selector': 'app-home'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EnregComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EnregComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
