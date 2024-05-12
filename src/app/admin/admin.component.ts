@@ -45,7 +45,7 @@ export class AdminComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.refreshListeUsers();
+    // this.refreshListeUsers();
   }
 
   refreshListeUsers(): void {
