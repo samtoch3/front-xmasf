@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -16,18 +16,15 @@ export class UserService {
   }
 
   findUserByName(userFullname: string): Observable<User> {
-    return of();
-      //return this.http.get<User>(`${this.server}/api/v1/xmasf/user/name/${userFullname}/getUser`);
+      return this.http.get<User>(`${this.server}/api/v1/xmasf/user/name/${userFullname}/getUser`);
   }
 
  findAllUsers(): Observable<User[]> {
-  return of([]);
-      //return this.http.get<User[]>(`${this.server}/api/v1/xmasf/getAllUsers`);
+      return this.http.get<User[]>(`${this.server}/api/v1/xmasf/getAllUsers`);
   }
 
   createOrUpdateUser(user: User): Observable<User> {
-    return of();
-      //return this.http.post<User>(`${this.server}/api/v2/xmasf/user/createOrUpdateUser`, user);
+      return this.http.post<User>(`${this.server}/api/v2/xmasf/user/createOrUpdateUser`, user);
   }
 
   saveSecretsSanta(changes: User): Observable<User> {
