@@ -19,8 +19,8 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, PanelModule, DividerModule, StepperModule, ButtonModule, TableModule, HttpClientModule, MessagesModule],
-  providers: [UserService, HttpClient],
+  imports: [CommonModule, PanelModule, DividerModule, ButtonModule, TableModule, HttpClientModule, MessagesModule],
+  //providers: [UserService, HttpClient],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
