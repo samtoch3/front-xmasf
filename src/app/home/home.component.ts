@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, HttpClientModule, ButtonModule, FormsModule, ReactiveFormsModule, MessagesModule, KeyFilterModule],
-  providers: [UserService, HttpClient],
+  //providers: [UserService, HttpClient],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
