@@ -50,12 +50,12 @@ export class AdminComponent implements OnInit {
 
   refreshListeUsers(): void {
     this.users = [];
-    this.usersService.findAllUsers().pipe(take(1)).subscribe(users => {
+    /*this.usersService.findAllUsers().pipe(take(1)).subscribe(users => {
       users.forEach(user => {
         user.id = users.indexOf(user);
       });
       this.users = this.helperService.trieParOrdreAlphabetique(users);
-    });
+    });*/
     
   }
 
